@@ -123,6 +123,11 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
 }
+@media (max-width: 767px) {
+  .business {
+    flex-wrap: wrap;
+  }
+}
 .business__body {
   flex: 1 1 50%;
   margin: 0px 40px 20px 15px;
@@ -134,6 +139,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1;
   margin-bottom: 25px;
+}
+@media (max-width: 767px) {
+  .business__title {
+    font-size: 45px;
+  }
 }
 .business__text {
   font-size: 18px;
@@ -168,6 +178,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 .business__img img {
+  min-width: 150px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
