@@ -80,12 +80,21 @@ h1, h2, h3, h4, h5, h6 {
 
 main {
   margin-bottom: 500px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid rgb(255, 255, 255);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
 }
 
 .icon-menu {
@@ -283,7 +292,7 @@ main {
 }
 
 .button {
-  background-color: rgb(71, 178, 244);
+  background-color: rgb(59, 112, 246);
   color: #fff;
   font-size: 18px;
   align-items: center;
@@ -296,7 +305,7 @@ main {
 }
 @media (any-hover: hover) {
   .button:hover {
-    background-color: rgb(74, 158, 210);
+    background-color: rgb(102, 141, 241);
   }
 }
 @media (max-width: 768px) {
@@ -366,13 +375,6 @@ main {
     margin: 10px 0;
   }
 }
-.item-service .triangle {
-  width: 0;
-  height: 0;
-  border-left: 10px solid rgb(255, 255, 255);
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-}
 .item-service__link::before, .item-service__link::after {
   content: "";
   cursor: pointer;
@@ -415,7 +417,7 @@ main {
   margin: 15px 0;
   font-size: 30px;
   text-align: center;
-  background-color: rgb(74, 158, 210);
+  background-color: rgb(59, 112, 246);
   display: inline-block;
   align-items: center;
   border-radius: 50%;
@@ -448,7 +450,7 @@ main {
 }
 
 ._blue {
-  background-color: rgb(74, 158, 210);
+  background-color: rgb(59, 112, 246);
   color: #fff;
   text-align: left;
   padding: 35px 25px;
@@ -471,7 +473,7 @@ main {
 }
 
 ._blue a {
-  background-color: rgb(74, 158, 210);
+  background-color: rgb(59, 112, 246);
   color: #fff;
   font-size: 20px;
   text-transform: uppercase;
@@ -585,4 +587,61 @@ main {
 ._icon-twitter {
   color: rgb(59, 112, 246);
   font-size: 45px;
+}
+
+.page__future {
+  background-color: rgb(59, 112, 246);
+}
+
+.future__body {
+  display: flex;
+}
+.future__items {
+  flex: 1 1 50%;
+}
+.future__stats {
+  flex: 1 1 50%;
+}
+
+.items-future__title {
+  font-size: 55px;
+  text-transform: capitalize;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.items-future__text {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.items-future__list {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.items-future__sentence {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+}
+.items-future__sentence::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 10px solid rgb(255, 255, 255);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  left: 5px;
+  top: 3px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid rgb(255, 255, 255);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
 }
