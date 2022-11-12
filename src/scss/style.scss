@@ -660,12 +660,21 @@ main {
 
   &__body {
     display: flex;
+    padding: 50px 0;
+    @media (max-width: 768px){
+      flex-direction: column;
+      padding:20px;
+    }
   }
 
   // .future__items
 
   &__items {
     flex: 1 1 50%;
+    margin-right: 20px;
+    @media (max-width: 768px){
+      margin-right: 0;
+    }
   }
 
   // .future__stats
@@ -680,25 +689,30 @@ main {
   // .items-future__title
 
   &__title {
-    font-size: 55px;
+    font-size: 50px;
+    font-weight: 700;
     text-transform: capitalize;
     color: #fff;
-    line-height: 1.5;
+    
     margin-bottom: 20px;
+    @media (max-width: 768px){
+      font-size: 30px;
+    }
   }
 
   // .items-future__text
 
   &__text {
-    color: #fff;
+    color: rgb(196, 180, 180);
     font-size: 16px;
     margin-bottom: 30px;
+    line-height: 1.2;
   }
 
   // .items-future__list
 
   &__list {
-    color: #fff;
+    color:rgb(196, 180, 180);
     font-size: 16px;
     margin-bottom: 30px;
   }
@@ -716,7 +730,7 @@ main {
     content: "";
     width: 0;
     height: 0;
-    border-left: 10px solid rgb(255, 255, 255);
+    border-left: 10px solid rgb(196, 180, 180);
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     position: absolute;
@@ -729,29 +743,48 @@ main {
   // .stats__block
 
   &__block {
+    text-align: center;
   }
 }
 .block {
   // .block__circle
-
-  &__circle {
+  &__circles{
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 50%;
+    margin-bottom: 25px;
+  }
+  &__circle { 
+    padding: 35px;
+    color: rgb(59, 112, 246);
+    font-weight: 700;
+    font-size: 48px;
   }
 
   // .block__title
 
   &__title {
+    color: rgb(196, 180, 180);
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
   }
 
   // .block__text
 
   &__text {
+    color: rgb(196, 180, 180);
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
 }
 
 .triangle {
   width: 0;
   height: 0;
-  border-left: 10px solid rgb(255, 255, 255);
+  border-left: 10px solid rgb(196, 180, 180);
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   // margin-right: 10px;
