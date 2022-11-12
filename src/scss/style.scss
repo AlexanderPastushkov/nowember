@@ -62,6 +62,9 @@ main{
 //   }
 // }
 //========================================================================================================================================================
+// HEADER
+
+//========================================================================================================================================================
 .header {
   // .header__container
 
@@ -82,6 +85,9 @@ main{
   &__icon {
   }
 }
+//========================================================================================================================================================
+// BUSINESS
+
 //========================================================================================================================================================
 .page {
   // .page__business
@@ -108,7 +114,7 @@ main{
   &__body {
     flex: 1 1 50%;
     margin: 0px 40px 20px 15px;
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       margin: 0px;
       text-align: center;
       justify-content: center;
@@ -132,7 +138,7 @@ main{
     @media (max-width: 992px) {
       font-size: 45px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       font-size: 35px;
       text-align: center;
     }
@@ -157,7 +163,7 @@ main{
     @media (max-width: 992px) {
       font-size: 16px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       font-size: 18px;
       padding-right: 10px;
       text-align: center;
@@ -173,7 +179,7 @@ main{
     font-size: 16px;
     color: grey;
     margin-bottom: 45px;
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       font-size: 18px;
 
       text-align: center;
@@ -189,7 +195,7 @@ main{
     display: inline-block;
     text-align: center;
     align-items: center;
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       margin: 0 auto;
     }
     @media (max-width: 620px) {
@@ -213,7 +219,7 @@ main{
       margin-top: 40px;
       min-width: 290px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       text-align: center;
     }
   }
@@ -251,12 +257,15 @@ main{
       background-color: rgb(74, 158, 210);
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     margin-bottom: 20px;
     align-items: center;
     text-align: center;
   }
 }
+//========================================================================================================================================================
+// SERVICE
+
 //========================================================================================================================================================
 .page {
   // .page__service
@@ -264,7 +273,7 @@ main{
   &__service {
     margin: 35px 0;
     background-color: rgb(228, 228, 228);
-    padding: 20px 0;
+    padding: 45px 0 ;
   }
 }
 .service {
@@ -293,8 +302,6 @@ main{
   &__item {
     text-align: center;
   }
-}
-.container {
 }
 
 .item-service {
@@ -341,6 +348,13 @@ main{
       margin: 10px 0;
     }
   }
+  .triangle{
+    width: 0;
+    height: 0;
+    border-left: 10px solid rgb(255, 255, 255);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
   &__link::before,
   &__link::after { 
     content:'';
@@ -349,7 +363,7 @@ main{
     height: 2px;
     background-color: #fff;
     position: absolute;
-    // top:8px;    
+        
   }
   &__link::before{
     transform: rotate(45deg);
@@ -361,6 +375,10 @@ main{
    right: 0px;
    top:11px;
   }
+
+  //========================================================================================================================================================
+
+// Вторая стрелка
   //========================================================================================================================================================
   &__link a{
     padding-right: 5px;}
@@ -372,7 +390,7 @@ main{
     height: 2px;
     background-color: #fff;
     position: absolute;
-    // top:8px;    
+       
   }
   &__link a::before{
     transform: rotate(45deg);
@@ -479,3 +497,157 @@ main{
 //   padding: 12px;
 //   color: #fff;
 // }
+
+//========================================================================================================================================================
+// Welcome
+//========================================================================================================================================================
+
+.page {
+
+  // .page__welcome
+
+  &__welcome {
+  }
+}
+.welcome {
+
+  // .welcome__container
+
+  &__container {
+  }
+
+  // .welcome__body
+
+  &__body { 
+    margin: 45px 0;
+  }
+
+  // .welcome__items
+
+  &__items {
+  }
+
+  // .welcome__text
+
+  &__text {
+    line-height: 1.7;
+    color: grey;
+  }
+}
+
+.items-welcome {
+
+  // .items-welcome__title
+
+  &__title {
+    font-size: 55px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+
+  }
+
+  // .items-welcome__text
+
+  &__text {
+    display: inline-block;
+    margin-bottom: 30px;
+    
+  }
+  &__text a {
+    color: rgb(59, 112, 246);
+    font-size: 20px;
+    font-weight: 700;
+  }
+  // .items-welcome__inner
+
+  &__inner {
+  }
+}
+.inner-welcome {
+  display: flex;
+align-items: center;
+margin-bottom: 35px;
+@media (max-width: 768px){
+ flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 425px){
+  flex-wrap: wrap;
+  justify-content: center;
+}
+  // .inner-welcome__image
+
+  &__image {
+    flex: 0 1 25%;
+    text-align: center;
+    margin-right: 20px;
+    @media (max-width: 768px){
+      flex: 1 1 100%;
+      text-align: center;
+      margin-bottom: 15px;
+      margin-right: 0;
+    }
+  }
+  &__image img {
+    border-radius: 50%;
+    object-fit: cover;
+    max-width: 75%;
+    @media (max-width: 768px){
+      max-width: 75%;
+      text-align: center;
+    }
+  &__social {
+    flex: 1 1 25%;
+    @media (max-width: 768px){
+      flex: 1 1 100%;
+    }
+  }
+ 
+}}
+
+.social-welcome {
+  background-color: rgb(228, 228, 228);
+  text-align: center;
+//  display: inline-block;
+  min-width: 200px;
+  min-height: 200px;
+  @media (max-width: 992px){
+    min-width:180px;
+  min-height: 180px;
+
+    }
+  @media (max-width: 768px){
+  width:100%;
+  }
+ 
+  @media (max-width: 425px){
+    min-width: 200px;
+  min-height: 200px;
+ 
+  }
+
+
+
+  // .social-welcome__icon
+  &__icon { 
+    margin: 40px 0 20px;
+  }
+
+  // .social-welcome__name
+
+  &__name { 
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+
+  // .social-welcome__text
+
+  &__text {
+  }
+}
+._icon-twitter{
+  color: rgb(59, 112, 246);
+  font-size: 45px;
+}
