@@ -368,11 +368,11 @@ main {
 }
 .item-service__link::before, .item-service__link::after {
   content: "";
+  cursor: pointer;
   width: 10px;
   height: 2px;
   background-color: #fff;
   position: absolute;
-  top: 8px;
 }
 .item-service__link::before {
   transform: rotate(45deg);
@@ -382,6 +382,26 @@ main {
 .item-service__link::after {
   transform: rotate(-45deg);
   right: 0px;
+  top: 11px;
+}
+.item-service__link a {
+  padding-right: 5px;
+}
+.item-service__link a::before, .item-service__link a::after {
+  content: "";
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+}
+.item-service__link a::before {
+  transform: rotate(45deg);
+  right: 10px;
+  top: 5px;
+}
+.item-service__link a::after {
+  transform: rotate(-45deg);
+  right: 10px;
   top: 11px;
 }
 .item-service__icon {

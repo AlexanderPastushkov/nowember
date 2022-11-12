@@ -344,11 +344,12 @@ main{
   &__link::before,
   &__link::after { 
     content:'';
+    cursor: pointer;
     width: 10px;
     height: 2px;
     background-color: #fff;
     position: absolute;
-    top:8px;    
+    // top:8px;    
   }
   &__link::before{
     transform: rotate(45deg);
@@ -360,6 +361,31 @@ main{
    right: 0px;
    top:11px;
   }
+  //========================================================================================================================================================
+  &__link a{
+    padding-right: 5px;}
+
+  &__link a::before,
+  &__link a::after { 
+    content:'';
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    // top:8px;    
+  }
+  &__link a::before{
+    transform: rotate(45deg);
+    right: 10px;
+    top:5px;
+  }
+  &__link a::after{
+    transform: rotate(-45deg);
+   right: 10px;
+   top:11px;
+  }
+//========================================================================================================================================================
+
   // .item-service__icon
 
   &__icon {
