@@ -1199,6 +1199,13 @@ color: #fff;
    
     padding: 50px;
     // background-color: rgb(157, 101, 101);
+    @media (max-width: 768px){
+      padding:50px 0;
+  }
+  @media (max-width: 425px){
+    padding: 0;
+    background: none;
+}
   }
 }
 .success {
@@ -1214,12 +1221,18 @@ color: #fff;
     display: grid;
     grid-template-columns: 25% 75%;
     margin: 50px 30px;
+    @media (max-width: 768px){
+      display: flex;
+  }
   }
 
   // .success__block
 
   &__block {
     background-color: rgb(59, 112, 246);
+    @media (max-width: 768px){
+        display: none;
+    }
   }
 
   // .success__inner
@@ -1239,6 +1252,9 @@ color: #fff;
     font-size: 52px;
     font-weight: 700;
     margin-bottom: 20px;
+    @media (max-width: 768px){
+      font-size: 32px;
+  }
   }
 
   // .inner-success_text

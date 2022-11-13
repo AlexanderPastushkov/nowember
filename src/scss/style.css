@@ -1001,14 +1001,35 @@ main {
   background: url(../images/success/office.jpg) center/cover no-repeat;
   padding: 50px;
 }
+@media (max-width: 768px) {
+  .page__success {
+    padding: 50px 0;
+  }
+}
+@media (max-width: 425px) {
+  .page__success {
+    padding: 0;
+    background: none;
+  }
+}
 
 .success__body {
   display: grid;
   grid-template-columns: 25% 75%;
   margin: 50px 30px;
 }
+@media (max-width: 768px) {
+  .success__body {
+    display: flex;
+  }
+}
 .success__block {
   background-color: rgb(59, 112, 246);
+}
+@media (max-width: 768px) {
+  .success__block {
+    display: none;
+  }
 }
 .success__inner {
   padding: 20px;
@@ -1019,6 +1040,11 @@ main {
   font-size: 52px;
   font-weight: 700;
   margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .inner-success_title {
+    font-size: 32px;
+  }
 }
 .inner-success_text {
   line-height: 1.2;
