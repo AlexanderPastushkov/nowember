@@ -977,6 +977,7 @@ main {
   // .page__pricing
 
   &__pricing {
+    margin-bottom: 50px;
   }
 }
 .pricing {
@@ -1185,4 +1186,68 @@ color: #fff;
 
   }
 }
+//========================================================================================================================================================
+// success
+//========================================================================================================================================================
+.page {
+
+  // .page__success
+
+  &__success {
+   
+    background:url(../images/success/office.jpg)center/cover no-repeat;
+   
+    padding: 50px;
+    // background-color: rgb(157, 101, 101);
+  }
+}
+.success {
+
+  // .success__container
+
+  &__container {
+  }
+
+  // .success__body
+
+  &__body {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin: 50px 30px;
+  }
+
+  // .success__block
+
+  &__block {
+    background-color: rgb(59, 112, 246);
+  }
+
+  // .success__inner
+
+  &__inner {
+    padding: 20px;
+   background-color: #fff;
+  }
+}
+.container {
+}
+.inner-success {
+
+  // .inner-success_title
+
+  &_title {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  // .inner-success_text
+
+  &_text {
+    line-height: 1.2;
+    color: #333;
+    font-size: 16px;
+  }
+}
+
 

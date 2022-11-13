@@ -859,6 +859,10 @@ main {
   }
 }
 
+.page__pricing {
+  margin-bottom: 50px;
+}
+
 .pricing__body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -991,4 +995,33 @@ main {
 }
 .solo button:hover {
   background-color: rgb(212, 214, 213);
+}
+
+.page__success {
+  background: url(../images/success/office.jpg) center/cover no-repeat;
+  padding: 50px;
+}
+
+.success__body {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  margin: 50px 30px;
+}
+.success__block {
+  background-color: rgb(59, 112, 246);
+}
+.success__inner {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.inner-success_title {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.inner-success_text {
+  line-height: 1.2;
+  color: #333;
+  font-size: 16px;
 }
