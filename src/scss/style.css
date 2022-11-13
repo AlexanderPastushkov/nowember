@@ -696,7 +696,8 @@ main {
 }
 
 .page__achievements {
-  margin-top: 80px;
+  margin-top: 40px;
+  margin-bottom: 35px;
 }
 @media (max-width: 620px) {
   .page__achievements {
@@ -856,4 +857,138 @@ main {
     align-items: center;
     text-align: center;
   }
+}
+
+.pricing__body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+@media (max-width: 768px) {
+  .pricing__body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.ourpricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.ourpricing__title {
+  font-size: 60px;
+  padding: 0 70px 0 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+@media (max-width: 768px) {
+  .ourpricing__title {
+    font-size: 40px;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+.ourpricing__items {
+  display: flex;
+}
+.ourpricing__text {
+  font-size: 16px;
+}
+
+._icon-lock {
+  background-color: rgb(162, 199, 254);
+  color: rgb(81, 141, 231);
+  padding: 10px;
+  max-height: 40px;
+  font-size: 18px;
+  margin-right: 15px;
+  display: inline-flex;
+}
+
+.items-pricing {
+  padding: 15px;
+}
+.items-pricing_button {
+  width: 100%;
+  margin: 30px 0;
+  padding: 10px 35px;
+}
+.items-pricing__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.items-pricing__title {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.items-pricing__price {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.items-pricing__text {
+  font-size: 16px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.items-pricing__text::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+.items-pricing__icon {
+  background-color: #fff;
+  color: rgb(196, 180, 180);
+  border-radius: 50%;
+  margin: 10px 10px 10px 0;
+  padding: 3px;
+  font-size: 10px;
+}
+.items-pricing__word {
+  margin-bottom: 25px;
+  color: rgb(196, 180, 180);
+}
+
+._black {
+  color: #333;
+}
+
+._white {
+  color: #fff;
+}
+
+.list-pricing {
+  display: flex;
+  align-items: center;
+}
+.team {
+  background-color: rgb(59, 112, 246);
+  color: #fff;
+}
+.team button {
+  background-color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease 0s;
+}
+.team button:hover {
+  background-color: rgb(135, 213, 255);
+}
+
+.solo {
+  background-color: rgb(228, 228, 228);
+  color: #333;
+}
+.solo button {
+  background-color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease 0s;
+}
+.solo button:hover {
+  background-color: rgb(212, 214, 213);
 }
