@@ -1196,7 +1196,7 @@ color: #fff;
   &__success {
    
     background:url(../images/success/office.jpg)center/cover no-repeat;
-   
+   margin-bottom: 50px;
     padding: 50px;
     // background-color: rgb(157, 101, 101);
     @media (max-width: 768px){
@@ -1263,6 +1263,90 @@ color: #fff;
     line-height: 1.2;
     color: #333;
     font-size: 16px;
+  }
+}
+//========================================================================================================================================================
+// help
+//========================================================================================================================================================
+.page {
+
+  // .page__help
+
+  &__help {
+  }
+}
+.help {
+
+  // .help__container
+
+  &__container {
+  }
+
+  // .help__body
+
+  &__body {
+    display: flex;
+  }
+
+  // .help__block1
+
+  &__block1 {
+    flex:1 1 50%;
+    padding: 15px;
+  }
+
+  // .help__block2
+
+  &__block2 {
+    flex:1 1 50%;
+  }
+
+  // .help__block2-text
+
+  &__block2-text {
+  }
+}
+
+.block1-help {
+
+  // .block1-help__title
+
+  &__title { 
+    font-weight: 700;
+    font-size: 55px;
+  }
+
+  // .block1-help__content
+
+  &__content {
+    margin-top: 20px;
+  }
+}
+.content {
+ 
+
+  // .content__question
+
+  &__question {
+    display: block;
+    padding: 15px;
+    border: 1px solid #333;
+
+  }
+
+  // .content__answer
+
+  &__answer {
+    display: none;
+  } 
+   // .content__answer-active 
+   
+
+  &__answer-active{
+    display: block;
+    background-color: rgb(241, 178, 178);
+    padding: 20px 15px;
+    min-height: 150px;
   }
 }
 

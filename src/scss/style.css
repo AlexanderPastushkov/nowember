@@ -999,6 +999,7 @@ main {
 
 .page__success {
   background: url(../images/success/office.jpg) center/cover no-repeat;
+  margin-bottom: 50px;
   padding: 50px;
 }
 @media (max-width: 768px) {
@@ -1050,4 +1051,37 @@ main {
   line-height: 1.2;
   color: #333;
   font-size: 16px;
+}
+
+.help__body {
+  display: flex;
+}
+.help__block1 {
+  flex: 1 1 50%;
+  padding: 15px;
+}
+.help__block2 {
+  flex: 1 1 50%;
+}
+.block1-help__title {
+  font-weight: 700;
+  font-size: 55px;
+}
+.block1-help__content {
+  margin-top: 20px;
+}
+
+.content__question {
+  display: block;
+  padding: 15px;
+  border: 1px solid #333;
+}
+.content__answer {
+  display: none;
+}
+.content__answer-active {
+  display: block;
+  background-color: rgb(241, 178, 178);
+  padding: 20px 15px;
+  min-height: 150px;
 }
