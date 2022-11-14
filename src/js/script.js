@@ -8,11 +8,20 @@ const answer = document.querySelectorAll('.content__answer');
 console.log(answer);
 quest.forEach(item=>{
   item.addEventListener("click", function(e){
-    answer.forEach(item=> {
+    item.querySelector('.content__answer')
       item.classList.toggle('content__answer-active');
     });  
   });
-});
+
+
+
+
+
+
+
+
+
+
 
 
 // const quest = document.querySelectorAll('.content__question');
