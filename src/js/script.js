@@ -1,18 +1,28 @@
 
-const blockContent = document.querySelector('.block1-help__content');
-console.log(blockContent);
-
-document.addEventListener("click",answer);
-
-function answer(e) {
-  if(e.target.closest('.content__question')){
-    console.log(e.target);
-  
-    blockContent.classList.toggle('content__answer-active');
+document.addEventListener('click',documentActions);
+function documentActions(e) {
+  const targetElement = e.target;
+  if (targetElement.classList.contains('content__question')){
+    targetElement.closest('.block1-help__content').classList.toggle('content__answer-active');
   }
-  if(!e.target.closest('.block1-help__content')){
-    blockContent.classList.remove('content__answer-active');
-  }}
+}
+
+
+
+// const blockContent = document.querySelector('.block1-help__content');
+// console.log(blockContent);
+
+// document.addEventListener("click",answer);
+
+// function answer(e) {
+//   if(e.target.closest('.content__question')){
+//     console.log(e.target);
+  
+//     blockContent.classList.toggle('content__answer-active');
+//   }
+//   if(!e.target.closest('.block1-help__content')){
+//     blockContent.classList.remove('content__answer-active');
+//   }}
 
 // const quest = document.querySelectorAll('.content__question');
 // const answer = document.querySelectorAll('.content__answer');
