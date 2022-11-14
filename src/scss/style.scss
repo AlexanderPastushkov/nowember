@@ -1333,21 +1333,42 @@ color: #fff;
     border: 1px solid #333;
 
   }
+  &__answer-active &__question {
+    background-color: #333;
+
+  }
+  
+  // &__question .content__answer-active {
+  //   background-color: rgb(124, 122, 122);
+
+  // }
 
   // .content__answer
 
   &__answer {
     display: none;
   } 
+  &__answer-active &__answer {
+    background-color: #333;
+    display: block;
+    background-color: rgb(241, 178, 178);
+    min-height: 150px;
+  }
    // .content__answer-active 
    
 
-  &__answer-active{
-    display: block;
-    background-color: rgb(241, 178, 178);
-    padding: 20px 15px;
-    min-height: 150px;
-  }
+  // &__answer .content__answer-active {
+  //   display: block;
+  //   background-color: rgb(241, 178, 178);
+  //   padding: 20px 15px;
+  //   min-height: 150px;
+  // }
+  //  &__answer-active {
+  //   display: block;
+  //   background-color: rgb(241, 178, 178);
+  //   padding: 20px 15px;
+  //   min-height: 150px;
+  // }
 }
 
 

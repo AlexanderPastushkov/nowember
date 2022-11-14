@@ -1076,12 +1076,15 @@ main {
   padding: 15px;
   border: 1px solid #333;
 }
+.content__answer-active .content__question {
+  background-color: #333;
+}
 .content__answer {
   display: none;
 }
-.content__answer-active {
+.content__answer-active .content__answer {
+  background-color: #333;
   display: block;
   background-color: rgb(241, 178, 178);
-  padding: 20px 15px;
   min-height: 150px;
 }
