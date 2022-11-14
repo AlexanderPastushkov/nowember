@@ -1330,11 +1330,24 @@ color: #fff;
   &__question {
     display: block;
     padding: 15px;
-    border: 1px solid #333;
-
+    position: relative;
+    font-size: 18px;
+   color:rgb(59, 112, 246);
+    &::after{
+      content:'';
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-top: 10px solid rgb(39, 38, 38);;
+      border-right: 8px solid transparent;
+      position: absolute;
+      right: 10px;
+      bottom: 20px;
+      position: absolute;
+    }
   }
   &__answer-active &__question {
-    background-color: #333;
+    background-color: rgb(255, 255, 255);
 
   }
   
@@ -1349,26 +1362,15 @@ color: #fff;
     display: none;
   } 
   &__answer-active &__answer {
-    background-color: #333;
-    display: block;
-    background-color: rgb(241, 178, 178);
+    background-color: rgb(206, 204, 204);
+    display: inline-block;
+    padding: 20px 15px;
     min-height: 150px;
   }
    // .content__answer-active 
    
 
-  // &__answer .content__answer-active {
-  //   display: block;
-  //   background-color: rgb(241, 178, 178);
-  //   padding: 20px 15px;
-  //   min-height: 150px;
-  // }
-  //  &__answer-active {
-  //   display: block;
-  //   background-color: rgb(241, 178, 178);
-  //   padding: 20px 15px;
-  //   min-height: 150px;
-  // }
+
 }
 
 
