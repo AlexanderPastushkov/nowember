@@ -1223,6 +1223,7 @@ color: #fff;
     margin: 50px 30px;
     @media (max-width: 768px){
       display: flex;
+      margin: 40px 0 ;
   }
   }
 
@@ -1240,6 +1241,10 @@ color: #fff;
   &__inner {
     padding: 20px;
    background-color: #fff;
+   @media (max-width: 425px){
+    padding: 10px 0;
+    
+}
   }
 }
 .container {
@@ -1254,8 +1259,10 @@ color: #fff;
     margin-bottom: 20px;
     @media (max-width: 768px){
       font-size: 32px;
+      text-align: center;
+    }
   }
-  }
+  
 
   // .inner-success_text
 
@@ -1263,6 +1270,9 @@ color: #fff;
     line-height: 1.2;
     color: #333;
     font-size: 16px;
+    @media (max-width: 768px){
+      text-align: justify;
+    }
   }
 }
 //========================================================================================================================================================
@@ -1280,30 +1290,55 @@ color: #fff;
   // .help__container
 
   &__container {
+    @media (max-width:380px){
+        padding: 0;
+    }
   }
 
   // .help__body
 
   &__body {
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   @media (max-width: 768px){
     display: flex;
+    flex-direction: column;
+  }
+    
   }
 
   // .help__block1
 
   &__block1 {
-    flex:1 1 50%;
+    
     padding: 15px;
+    @media (max-width:768px){
+     padding: 0;
+     margin-bottom: 25px;
+    }
   }
 
   // .help__block2
 
   &__block2 {
-    flex:1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
   }
 
   // .help__block2-text
 
   &__block2-text {
+   align-self: center;
+    padding: 50px 10px;
+    width: 300px;
+    height: 300px;
+    min-width: 200px;
+    min-height: 200px;
+    background-color:rgb(59, 112, 246);
+    color: #fff;
+    text-align:justify;
   }
 }
 
@@ -1314,6 +1349,15 @@ color: #fff;
   &__title { 
     font-weight: 700;
     font-size: 55px;
+
+    @media (max-width: 992px){
+      font-size: 45px;
+        text-align: center;
+    }
+    @media (max-width: 768px){
+      font-size: 35px;
+        text-align: center;
+    }
   }
 
   // .block1-help__content
@@ -1328,6 +1372,7 @@ color: #fff;
   // .content__question
 
   &__question {
+    cursor: pointer;
     display: block;
     padding: 15px;
     position: relative;
@@ -1344,6 +1389,13 @@ color: #fff;
       right: 10px;
       bottom: 20px;
       position: absolute;
+      @media (max-width: 992px){
+        right: 0px;
+        font-size: 16px;
+      }
+      @media (max-width:380px){
+        font-size: 14px;
+    }
     }
   }
   &__answer-active &__question {
@@ -1365,7 +1417,7 @@ color: #fff;
     background-color: rgb(206, 204, 204);
     display: inline-block;
     padding: 20px 15px;
-    min-height: 150px;
+    min-height: 100px;
   }
    // .content__answer-active 
    

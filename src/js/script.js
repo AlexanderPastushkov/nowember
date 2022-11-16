@@ -5,6 +5,7 @@ function documentActions(e) {
   if (targetElement.classList.contains('content__question')){
     targetElement.closest('.block1-help__content').classList.toggle('content__answer-active');
   }
+  
 }
 
 

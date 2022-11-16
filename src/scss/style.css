@@ -1022,6 +1022,7 @@ main {
 @media (max-width: 768px) {
   .success__body {
     display: flex;
+    margin: 40px 0;
   }
 }
 .success__block {
@@ -1036,6 +1037,11 @@ main {
   padding: 20px;
   background-color: #fff;
 }
+@media (max-width: 425px) {
+  .success__inner {
+    padding: 10px 0;
+  }
+}
 
 .inner-success_title {
   font-size: 52px;
@@ -1045,6 +1051,7 @@ main {
 @media (max-width: 768px) {
   .inner-success_title {
     font-size: 32px;
+    text-align: center;
   }
 }
 .inner-success_text {
@@ -1052,26 +1059,75 @@ main {
   color: #333;
   font-size: 16px;
 }
+@media (max-width: 768px) {
+  .inner-success_text {
+    text-align: justify;
+  }
+}
 
+@media (max-width: 380px) {
+  .help__container {
+    padding: 0;
+  }
+}
 .help__body {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 768px) {
+  .help__body {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .help__block1 {
-  flex: 1 1 50%;
   padding: 15px;
 }
-.help__block2 {
-  flex: 1 1 50%;
+@media (max-width: 768px) {
+  .help__block1 {
+    padding: 0;
+    margin-bottom: 25px;
+  }
 }
+.help__block2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.help__block2-text {
+  align-self: center;
+  padding: 50px 10px;
+  width: 300px;
+  height: 300px;
+  min-width: 200px;
+  min-height: 200px;
+  background-color: rgb(59, 112, 246);
+  color: #fff;
+  text-align: justify;
+}
+
 .block1-help__title {
   font-weight: 700;
   font-size: 55px;
+}
+@media (max-width: 992px) {
+  .block1-help__title {
+    font-size: 45px;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .block1-help__title {
+    font-size: 35px;
+    text-align: center;
+  }
 }
 .block1-help__content {
   margin-top: 20px;
 }
 
 .content__question {
+  cursor: pointer;
   display: block;
   padding: 15px;
   position: relative;
@@ -1090,6 +1146,17 @@ main {
   bottom: 20px;
   position: absolute;
 }
+@media (max-width: 992px) {
+  .content__question::after {
+    right: 0px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 380px) {
+  .content__question::after {
+    font-size: 14px;
+  }
+}
 .content__answer-active .content__question {
   background-color: rgb(255, 255, 255);
 }
@@ -1100,5 +1167,5 @@ main {
   background-color: rgb(206, 204, 204);
   display: inline-block;
   padding: 20px 15px;
-  min-height: 150px;
+  min-height: 100px;
 }
