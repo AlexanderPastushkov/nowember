@@ -7,6 +7,66 @@ function documentActions(e) {
   }
   
 }
+//========================================================================================================================================================
+
+const formFields = document.querySelectorAll('[type="text"]');
+const submitBtn = document.querySelector('[type="submit"]')
+console.log(formFields);
+console.log(submitBtn);
+ 
+submitBtn.addEventListener('click',clearLocalStorage);
+
+
+
+
+function clearLocalStorage() {
+  localStorage.clear();
+}
+
+//========================================================================================================================================================
+
+function changeHandler(){
+  console.log(this.name, this.value);
+  localStorage.setItem(this.name, this.value);
+  
+}
+//========================================================================================================================================================
+
+function checkStorage() {
+  for (let i = 0; i < formFields.length; i++) {
+    formFields[i] = localStorage.getItem(formFields[i].name)
+    console.log(formFields[i].name);
+  }
+  attachEvents();
+  
+}
+function attachEvents(){
+  for (let i = 0; i < formFields.length; i++) {
+    formFields[i].addEventListener('change',changeHandler);
+  }
+}
+checkStorage();
+console.log(checkStorage());
+//========================================================================================================================================================
+// function validateForm() {
+//   for (let i = 0; i < formFields.length; i++);
+//    if (formFields == ""){
+//     alert("Error!");
+//     return false;
+
+//    }
+  
+// }
+function validateForm() {
+  let x = document.forms["myForm"]["name"].value;
+  let y = document.forms["myForm"]["email"].value;
+  
+  if ((x =="")||(y=="")){
+    alert ("fill in all fields with *");
+    return false;
+  }
+  
+}
 
 
 
