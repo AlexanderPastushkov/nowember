@@ -31,24 +31,46 @@ function formValidate(form) {
   let formReq = document.querySelectorAll("._req");
   console.log(formReq);
 
+
   for (let index = 0; index < formReq.length; index++) {
     const input = formReq[index];
     console.log(input);
 
     formRemoveError(input);
-    if (input.value == "") {
-      formAddError(input);
-      alert('Fill the fields with *');
-      error++;
-    }
-   else 
-    if (input.classList.contains("_email")) {
-      if (emailTest(input)) {
+  
+    if (input.classList.contains("_name")){
+      if (input.value == "") {
+      
+        
+          alert('fill name');
+          formAddError(input);
+          error++;
+        }
+      } 
+    else 
+    if (input.classList.contains("_email")){
+    if ((input.value == "")||(emailTest(input))) {
+    
+      
         alert('write correct email');
         formAddError(input);
         error++;
       }
     } 
+
+    // if (input.value == "") {
+    //   formAddError(input);
+      
+    //   error++;
+    // }
+  //  else 
+  //   if (input.classList.contains("_email")) {
+  //     if (emailTest(input)) {
+  //       alert('write correct email');
+  //       formAddError(input);
+  //       error++;
+  //     }
+  //   } 
 }}
 
 function formAddError(input) {
