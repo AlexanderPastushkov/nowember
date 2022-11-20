@@ -38,11 +38,13 @@ function formValidate(form) {
     formRemoveError(input);
     if (input.value == "") {
       formAddError(input);
+      alert('Fill the fields with *');
       error++;
     }
    else 
     if (input.classList.contains("_email")) {
       if (emailTest(input)) {
+        alert('write correct email');
         formAddError(input);
         error++;
       }
