@@ -1511,7 +1511,9 @@ main {
     &:focus {
       box-shadow: 0 0 15px rgb(117, 162, 252);
     }
+    
   }
+
 
   // .form__button
 
@@ -1536,6 +1538,11 @@ main {
       }
     }
   }
+}
+.form__input._error{
+  
+    box-shadow: 0 0 15px rgb(249, 35, 35);
+  
 }
 textarea.form__input {
   min-height: 100px;
@@ -1594,4 +1601,12 @@ textarea.form__input {
   align-items: center;
   justify-content: center;
   display: flex;
+}
+
+//========================================================================================================================================================
+.invalid{
+  box-shadow: 0 0 15px rgb(250, 4, 4);
+}
+.valid{
+  box-shadow: 0 0 15px rgb(63, 236, 115);
 }
