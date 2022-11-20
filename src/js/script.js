@@ -21,7 +21,7 @@ function addData() {
 const form = document.getElementById("form");
 form.addEventListener("submit", formSend);
 form.addEventListener("submit",addData);
-async function formSend(e) {
+ function formSend(e) {
   e.preventDefault();
   let error = formValidate(form);
 }
@@ -42,7 +42,7 @@ function formValidate(form) {
       if (input.value == "") {
       
         
-          alert('fill name');
+          alert('Enter your name');
           formAddError(input);
           error++;
         }
