@@ -52,7 +52,7 @@ function formValidate(form) {
     if ((input.value == "")||(emailTest(input))) {
     
       
-        alert('enter correct email');
+        alert('Enter correct email');
         formAddError(input);
         error++;
       }
