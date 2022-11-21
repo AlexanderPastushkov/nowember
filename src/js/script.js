@@ -81,9 +81,11 @@ function formRemoveError(input) {
 }
 function emailTest(input) {
   
-  
+
   return !/^\S+@\S+\.\S+$/.test(input.value);
+  
 }
+
 //========================================================================================================================================================
 
 // function validateForm() {
