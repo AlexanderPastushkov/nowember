@@ -1336,3 +1336,37 @@ textarea.form__input {
 .valid {
   box-shadow: 0 0 15px rgb(63, 236, 115);
 }
+
+.autocomplete-block {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.autocomplete {
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.autocomplete-input {
+  width: 100%;
+}
+
+.autocomplete-list {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  top: 20px;
+  left: 0;
+  background-color: #fff;
+  padding: 10px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.autocomplete-list li {
+  padding: 5px;
+  border: 1px #333 solid;
+  cursor: pointer;
+}

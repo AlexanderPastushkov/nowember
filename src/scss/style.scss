@@ -1511,9 +1511,7 @@ main {
     &:focus {
       box-shadow: 0 0 15px rgb(117, 162, 252);
     }
-    
   }
-
 
   // .form__button
 
@@ -1539,10 +1537,8 @@ main {
     }
   }
 }
-.form__input._error{
-  
-    box-shadow: 0 0 15px rgb(249, 35, 35);
-  
+.form__input._error {
+  box-shadow: 0 0 15px rgb(249, 35, 35);
 }
 textarea.form__input {
   min-height: 100px;
@@ -1604,9 +1600,40 @@ textarea.form__input {
 }
 
 //========================================================================================================================================================
-.invalid{
+.invalid {
   box-shadow: 0 0 15px rgb(250, 4, 4);
 }
-.valid{
+.valid {
   box-shadow: 0 0 15px rgb(63, 236, 115);
+}
+//========================================================================================================================================================
+.autocomplete-block {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.autocomplete {
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+.autocomplete-input {
+  width: 100%;
+}
+.autocomplete-list {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  top: 20px;
+  left: 0;
+  background-color: #fff;
+  padding: 10px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.autocomplete-list li {
+  padding: 5px;
+  border: 1px #333 solid;
+  cursor: pointer;
 }

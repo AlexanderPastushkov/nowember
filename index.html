@@ -22,8 +22,23 @@
         </header>
         <main class="page">
             <div class="page__business">
+                <div class="container">
+                    <div class="autocomplete-block">
+
+                        <div class="autocomplete">
+                            <input autocomplete="off" type="text" class="autocomplete-input" id="country-input"
+                                placeholder="search for the country">
+                            <ul class="autocomplete-list" id="country-list">
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
                 <div class="business__container container">
                     <div class="page__business business">
+
+
                         <div class="business__body">
                             <h1 class="business__title">Making your business ideas come true</h1>
                             <p class="business__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
@@ -296,9 +311,10 @@
                                     </div>
                                     <div class="form__item">
                                         <label for="formMessage" class="form__label">Message</label>
-                                        <textarea name="message" id="formMessage" class="form__input"></textarea>
+                                        <textarea name="message" id="formMessage" class="form__input"
+                                            type="text"></textarea>
                                     </div>
-                                    <button  type="submit" class="form__button">Submit</button>
+                                    <button type="submit" class="form__button">Submit</button>
                                 </form>
                             </div>
 
@@ -335,6 +351,7 @@
         </footer>
     </div>
     <script src="src/js/script.js"></script>
+
 </body>
 
 </html>
