@@ -111,6 +111,14 @@ function autocomplete() {
   // получили инпут в переменную
   let countryInput = document.getElementById("country-input");
   let ulField = document.getElementById("country-list");
+
+  ulField.addEventListener("click", (e) => {
+    if (e.target) {
+      countryInput.value = e.target.textContent;
+      ulField.classList.toggle("closeList");
+      console.log(countryInput.value);
+    }
+  });
   // слушаем инпут
   countryInput.addEventListener("input", (e) => {
     // создаем пустой массив
@@ -118,6 +126,7 @@ function autocomplete() {
     // значение инпута
     let targetValue = e.target.value;
     if (targetValue) {
+      ulField.classList.remove("closeList");
       console.log(targetValue);
       // filter возвращает массив из всех подходящих элементов
       countriesArr = countries.filter((item) =>
@@ -139,12 +148,6 @@ function autocomplete() {
     // добавляем содержимое в список в html файл
     ulField.innerHTML = html;
     console.log(html);
-    ulField.addEventListener("click", (e) => {
-      if (e.target) {
-        countryInput.value = e.target.textContent;
-        console.log(countryInput.value);
-      }
-    });
   }
 }
 autocomplete();

@@ -1370,3 +1370,7 @@ textarea.form__input {
   border: 1px #333 solid;
   cursor: pointer;
 }
+
+.closeList {
+  display: none;
+}
