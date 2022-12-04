@@ -107,37 +107,40 @@ function emailTest(input) {
 }
 
 //========================================================================================================================================================
-// получили инпут в переменную
-let countryInput = document.getElementById("country-input");
-// слушаем инпут
-countryInput.addEventListener("input", (e) => {
-  // создаем пустой массив
-  let countriesArr = [];
-  // значение инпута
-  let targetValue = e.target.value;
-  if (targetValue) {
-    console.log(targetValue);
-    // filter возвращает массив из всех подходящих элементов
-    countriesArr = countries.filter((item) =>
-      item.toLowerCase().includes(targetValue)
-    );
-    // map преобразует массив , получаем новый массив с тегом ли
-    countriesArr = countriesArr.map((item) => `<li>${item}</li>`);
+function autocomplete() {
+  // получили инпут в переменную
+  let countryInput = document.getElementById("country-input");
+  let ulField = document.getElementById("country-list");
+  // слушаем инпут
+  countryInput.addEventListener("input", (e) => {
+    // создаем пустой массив
+    let countriesArr = [];
+    // значение инпута
+    let targetValue = e.target.value;
+    if (targetValue) {
+      console.log(targetValue);
+      // filter возвращает массив из всех подходящих элементов
+      countriesArr = countries.filter((item) =>
+        item.toLocaleLowerCase().includes(targetValue)
+      );
+      // map преобразует массив , получаем новый массив с тегом ли
+      countriesArr = countriesArr.map((item) => `<li>${item}</li>`);
+    }
+    console.log(countriesArr);
+    // вызываем функцию добавления стран в список
+    showCountry(countriesArr);
+  });
+  ulField.addEventListener("click", (e) => {});
+  // функция добавления подсказок стран
+  function showCountry(countriesArr) {
+    // проверяем длину массива, если не пустой то преобразуем его в строку
+    const html = !countriesArr.length ? "" : countriesArr.join("");
+    // добавляем содержимое в список в html файл
+    ulField.innerHTML = html;
+    console.log(html);
   }
-  console.log(countriesArr);
-  // вызываем функцию добавления стран в список
-  showCountry(countriesArr);
-});
-// функция добавления подсказок стран
-function showCountry(countriesArr) {
-  // проверяем длину массива, если не пустой то преобразуем его в строку
-  const html = !countriesArr.length ? "" : countriesArr.join("");
-
-  let innHtml = document.getElementById("country-list");
-  // добавляем содержимое в список в html файл
-  innHtml.innerHTML = html;
-  console.log(html);
 }
+autocomplete();
 
 //========================================================================================================================================================
 var countries = [
@@ -366,7 +369,27 @@ var countries = [
   "Zimbabwe",
 ];
 //========================================================================================================================================================
+const requestURL = "https://jsonplaceholder.typicode.com/users";
 
+function sendRequest(method, url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.responseType = "json";
+    xhr.onload = () => {
+      if (xhr.status >= 400) {
+        reject(xhr.response);
+      } else {
+        resolve(xhr.response);
+      }
+    };
+    xhr.onerror = () => {
+      reject(xhr.response);
+    };
+    xhr.send();
+  });
+}
+sendRequest("GET", requestURL).then((data) => console.log(data));
 //========================================================================================================================================================
 
 //========================================================================================================================================================
