@@ -121,16 +121,17 @@ function autocomplete() {
       console.log(targetValue);
       // filter возвращает массив из всех подходящих элементов
       countriesArr = countries.filter((item) =>
-        item.toLocaleLowerCase().includes(targetValue)
+        item.trim().toLowerCase().includes(targetValue.trim().toLowerCase())
       );
       // map преобразует массив , получаем новый массив с тегом ли
       countriesArr = countriesArr.map((item) => `<li>${item}</li>`);
     }
     console.log(countriesArr);
+
     // вызываем функцию добавления стран в список
     showCountry(countriesArr);
   });
-  ulField.addEventListener("click", (e) => {});
+
   // функция добавления подсказок стран
   function showCountry(countriesArr) {
     // проверяем длину массива, если не пустой то преобразуем его в строку
@@ -138,6 +139,12 @@ function autocomplete() {
     // добавляем содержимое в список в html файл
     ulField.innerHTML = html;
     console.log(html);
+    ulField.addEventListener("click", (e) => {
+      if (e.target) {
+        countryInput.value = e.target.textContent;
+        console.log(countryInput.value);
+      }
+    });
   }
 }
 autocomplete();
