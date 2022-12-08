@@ -36,28 +36,7 @@ function addData() {
 }
 
 //========================================================================================================================================================
-// let myObj = {
-//   name: "John",
-//   email: "sanekhouse54@gmai.com",
-//   country: "USA",
-// };
-// localStorage.setItem("myObj", myObj);
-// console.log(localStorage.getItem("myObj"));
 
-// let serializeObj = JSON.stringify(myObj);
-// localStorage.setItem("serializeObj", serializeObj);
-// console.log(localStorage.getItem("serializeObj"));
-// let value = JSON.parse(serializeObj);
-// console.log(value);
-//========================================================================================================================================================
-// let user = {
-//   name: "Василий Иванович",
-//   age: 35,
-// };
-// let serial = JSON.stringify(user);
-// console.log(serial);
-// let vaue = JSON.parse(serial);
-// console.log(vaue);
 //========================================================================================================================================================
 // отправка формы без перезагрузки
 //========================================================================================================================================================
@@ -111,7 +90,6 @@ function autocomplete() {
   // получили инпут в переменную
   let countryInput = document.getElementById("country-input");
   let ulField = document.getElementById("country-list");
-
   ulField.addEventListener("click", (e) => {
     if (e.target) {
       countryInput.value = e.target.textContent;
@@ -119,36 +97,49 @@ function autocomplete() {
       console.log(countryInput.value);
     }
   });
-  // слушаем инпут
   countryInput.addEventListener("input", (e) => {
     // создаем пустой массив
     let countriesArr = [];
+    console.log(countriesArr);
+
+    const requestURL = "https://jsonplaceholder.typicode.com/posts";
+
     // значение инпута
     let targetValue = e.target.value;
     if (targetValue) {
       ulField.classList.remove("closeList");
       console.log(targetValue);
-      // filter возвращает массив из всех подходящих элементов
-      countriesArr = countries.filter((item) =>
-        item.trim().toLowerCase().includes(targetValue.trim().toLowerCase())
-      );
-      // map преобразует массив , получаем новый массив с тегом ли
-      countriesArr = countriesArr.map((item) => `<li>${item}</li>`);
+      function sendRequest(method, url, body = null) {
+        return fetch(url)
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            countriesArr = data.filter((item) =>
+              item.title
+
+                .toLowerCase()
+                .includes(targetValue.trim().toLowerCase())
+            );
+
+            // map преобразует массив , получаем новый массив с тегом ли
+            countriesArr = countriesArr.map((item) => `<li>${item.title}</li>`);
+            console.log(countriesArr);
+            showCountry(countriesArr);
+          });
+      }
+      console.log(sendRequest("GET", requestURL));
+
+      function showCountry(countriesArr) {
+        // проверяем длину массива, если не пустой то преобразуем его в строку
+        const html = !countriesArr.length ? "" : countriesArr.join("");
+        // добавляем содержимое в список в html файл
+        ulField.innerHTML = html;
+        console.log(html);
+      }
     }
     console.log(countriesArr);
-
-    // вызываем функцию добавления стран в список
-    showCountry(countriesArr);
   });
-
-  // функция добавления подсказок стран
-  function showCountry(countriesArr) {
-    // проверяем длину массива, если не пустой то преобразуем его в строку
-    const html = !countriesArr.length ? "" : countriesArr.join("");
-    // добавляем содержимое в список в html файл
-    ulField.innerHTML = html;
-    console.log(html);
-  }
 }
 autocomplete();
 
@@ -168,241 +159,63 @@ var countries = [
   "Austria",
   "Azerbaijan",
   "Bahamas",
-  "Bahrain",
-  "Bangladesh",
-  "Barbados",
-  "Belarus",
-  "Belgium",
-  "Belize",
-  "Benin",
-  "Bermuda",
-  "Bhutan",
-  "Bolivia",
-  "Bosnia &amp; Herzegovina",
-  "Botswana",
-  "Brazil",
-  "British Virgin Islands",
-  "Brunei",
-  "Bulgaria",
-  "Burkina Faso",
-  "Burundi",
-  "Cambodia",
-  "Cameroon",
-  "Canada",
-  "Cape Verde",
-  "Cayman Islands",
-  "Central Arfrican Republic",
-  "Chad",
-  "Chile",
-  "China",
-  "Colombia",
-  "Congo",
-  "Cook Islands",
-  "Costa Rica",
-  "Cote D Ivoire",
-  "Croatia",
-  "Cuba",
-  "Curacao",
-  "Cyprus",
-  "Czech Republic",
-  "Denmark",
-  "Djibouti",
-  "Dominica",
-  "Dominican Republic",
-  "Ecuador",
-  "England",
-  "Egypt",
-  "El Salvador",
-  "Equatorial Guinea",
-  "Eritrea",
-  "Estonia",
-  "Ethiopia",
-  "Falkland Islands",
-  "Faroe Islands",
-  "Fiji",
-  "Finland",
-  "France",
-  "French Polynesia",
-  "French West Indies",
-  "Gabon",
-  "Gambia",
-  "Georgia",
-  "Germany",
-  "Ghana",
-  "Gibraltar",
-  "Greece",
-  "Greenland",
-  "Grenada",
-  "Guam",
-  "Guatemala",
-  "Guernsey",
-  "Guinea",
-  "Guinea Bissau",
-  "Guyana",
-  "Haiti",
-  "Honduras",
-  "Hong Kong",
-  "Hungary",
-  "Iceland",
-  "India",
-  "Indonesia",
-  "Iran",
-  "Iraq",
-  "Ireland",
-  "Isle of Man",
-  "Israel",
-  "Italy",
-  "Jamaica",
-  "Japan",
-  "Jersey",
-  "Jordan",
-  "Kazakhstan",
-  "Kenya",
-  "Kiribati",
-  "Kosovo",
-  "Kuwait",
-  "Kyrgyzstan",
-  "Laos",
-  "Latvia",
-  "Lebanon",
-  "Lesotho",
-  "Liberia",
-  "Libya",
-  "Liechtenstein",
-  "Lithuania",
-  "Luxembourg",
-  "Macau",
-  "Macedonia",
-  "Madagascar",
-  "Malawi",
-  "Malaysia",
-  "Maldives",
-  "Mali",
-  "Malta",
-  "Marshall Islands",
-  "Mauritania",
-  "Mauritius",
-  "Mexico",
-  "Micronesia",
-  "Moldova",
-  "Monaco",
-  "Mongolia",
-  "Montenegro",
-  "Montserrat",
-  "Morocco",
-  "Mozambique",
-  "Myanmar",
-  "Namibia",
-  "Nauro",
-  "Nepal",
-  "Netherlands",
-  "Netherlands Antilles",
-  "New Caledonia",
-  "New Zealand",
-  "Nicaragua",
-  "Niger",
-  "Nigeria",
-  "North Korea",
-  "Norway",
-  "Oman",
-  "Pakistan",
-  "Palau",
-  "Palestine",
-  "Panama",
-  "Papua New Guinea",
-  "Paraguay",
-  "Peru",
-  "Philippines",
-  "Poland",
-  "Portugal",
-  "Puerto Rico",
-  "Qatar",
-  "Reunion",
-  "Romania",
-  "Russia",
-  "Rwanda",
-  "Saint Pierre &amp; Miquelon",
-  "Samoa",
-  "San Marino",
-  "Sao Tome and Principe",
-  "Saudi Arabia",
-  "Senegal",
-  "Serbia",
-  "Seychelles",
-  "Sierra Leone",
-  "Singapore",
-  "Slovakia",
-  "Slovenia",
-  "Solomon Islands",
-  "Somalia",
-  "South Africa",
-  "South Korea",
-  "South Sudan",
-  "Spain",
-  "Sri Lanka",
-  "St Kitts &amp; Nevis",
-  "St Lucia",
-  "St Vincent",
-  "Sudan",
-  "Suriname",
-  "Swaziland",
-  "Sweden",
-  "Switzerland",
-  "Syria",
-  "Taiwan",
-  "Tajikistan",
-  "Tanzania",
-  "Thailand",
-  "Timor L'Este",
-  "Togo",
-  "Tonga",
-  "Trinidad &amp; Tobago",
-  "Tunisia",
-  "Turkey",
-  "Turkmenistan",
-  "Turks &amp; Caicos",
-  "Tuvalu",
-  "Uganda",
-  "Ukraine",
-  "United Arab Emirates",
-  "United Kingdom",
-  "United States of America",
-  "Uruguay",
-  "Uzbekistan",
-  "Vanuatu",
-  "Vatican City",
-  "Venezuela",
-  "Vietnam",
-  "Virgin Islands (US)",
-  "Yemen",
-  "Zambia",
-  "Zimbabwe",
 ];
 //========================================================================================================================================================
-const requestURL = "https://jsonplaceholder.typicode.com/users";
-
-function sendRequest(method, url) {
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open(method, url);
-    xhr.responseType = "json";
-    xhr.onload = () => {
-      if (xhr.status >= 400) {
-        reject(xhr.response);
-      } else {
-        resolve(xhr.response);
-      }
-    };
-    xhr.onerror = () => {
-      reject(xhr.response);
-    };
-    xhr.send();
-  });
-}
-sendRequest("GET", requestURL).then((data) => console.log(data));
-//========================================================================================================================================================
 
 //========================================================================================================================================================
+// XMLHttpRequest
+//========================================================================================================================================================
+
+// function sendRequest(method, url, body = null) {
+//   return new Promise((resolve, reject) => {
+//     const xhr = new XMLHttpRequest();
+//     xhr.open(method, url);
+//     xhr.responseType = "json";
+//     xhr.setRequestHeader("Content-Type", "application/json");
+//     xhr.onload = () => {
+//       if (xhr.status >= 400) {
+//         reject(xhr.response);
+//       } else {
+//         resolve(xhr.response);
+//       }
+//     };
+//     xhr.onerror = () => {
+//       reject(xhr.response);
+//     };
+//     xhr.send(JSON.stringify(body));
+//   });
+// }
+
+// sendRequest("GET", requestURL)
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+// const body = {
+//   name: "Alexander",
+//   age: 33,
+// };
+
+// sendRequest("POST", requestURL, body)
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+//========================================================================================================================================================
+// fetch
+//========================================================================================================================================================
+
+// function sendRequest(method, url, body = null) {
+//   return fetch(url).then((response) => {
+//     return response.json();
+//   });
+// }
+
+// sendRequest("GET", requestURL)
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+// const body = {
+//   name: "Alexander",
+//   age: 33,
+// };
 
 // function getAverage(marks){
 //   return Math.round(marks.reduce((a,b)=> a+b)/marks.length);
@@ -463,7 +276,28 @@ sendRequest("GET", requestURL).then((data) => console.log(data));
 //   'audi': 2,
 //   'mercedes': 4,
 // }
+// let myObj = {
+//   name: "John",
+//   email: "sanekhouse54@gmai.com",
+//   country: "USA",
+// };
+// localStorage.setItem("myObj", myObj);
+// console.log(localStorage.getItem("myObj"));
 
+// let serializeObj = JSON.stringify(myObj);
+// localStorage.setItem("serializeObj", serializeObj);
+// console.log(localStorage.getItem("serializeObj"));
+// let value = JSON.parse(serializeObj);
+// console.log(value);
+//========================================================================================================================================================
+// let user = {
+//   name: "Василий Иванович",
+//   age: 35,
+// };
+// let serial = JSON.stringify(user);
+// console.log(serial);
+// let vaue = JSON.parse(serial);
+// console.log(vaue);
 //========================================================================================================================================================
 // let userInfo = {
 //   name: "vasya",
