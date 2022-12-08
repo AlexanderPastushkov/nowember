@@ -117,7 +117,7 @@ function autocomplete() {
           .then((data) => {
             countriesArr = data.filter((item) =>
               item.title
-
+                .trim()
                 .toLowerCase()
                 .includes(targetValue.trim().toLowerCase())
             );
