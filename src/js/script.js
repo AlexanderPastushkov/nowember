@@ -87,9 +87,9 @@ function emailTest(input) {
 
 //========================================================================================================================================================
 function autocomplete() {
-  // получили инпут в переменную
   let countryInput = document.getElementById("country-input");
   let ulField = document.getElementById("country-list");
+
   ulField.addEventListener("click", (e) => {
     if (e.target) {
       countryInput.value = e.target.textContent;
@@ -97,18 +97,28 @@ function autocomplete() {
       console.log(countryInput.value);
     }
   });
-  countryInput.addEventListener("input", (e) => {
-    // создаем пустой массив
+  const debounce = (fn, ms) => {
+    let timeout;
+    return function () {
+      const fnCall = () => {
+        fn.apply(this, arguments);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(fnCall, ms);
+    };
+  };
+
+  countryInput.addEventListener("input", debounce(onChange, 500));
+  function onChange(e) {
     let countriesArr = [];
-    console.log(countriesArr);
 
     const requestURL = "https://jsonplaceholder.typicode.com/posts";
 
-    // значение инпута
-    let targetValue = e.target.value;
-    if (targetValue) {
+    if (e.target.value) {
       ulField.classList.remove("closeList");
-      console.log(targetValue);
+
+      console.log(e.target.value);
+
       function sendRequest(method, url, body = null) {
         return fetch(url)
           .then((response) => {
@@ -119,29 +129,36 @@ function autocomplete() {
               item.title
                 .trim()
                 .toLowerCase()
-                .includes(targetValue.trim().toLowerCase())
+                .includes(e.target.value.trim().toLowerCase())
             );
 
             // map преобразует массив , получаем новый массив с тегом ли
             countriesArr = countriesArr.map((item) => `<li>${item.title}</li>`);
-            console.log(countriesArr);
+
             showCountry(countriesArr);
           });
       }
-      console.log(sendRequest("GET", requestURL));
-
-      function showCountry(countriesArr) {
-        // проверяем длину массива, если не пустой то преобразуем его в строку
-        const html = !countriesArr.length ? "" : countriesArr.join("");
-        // добавляем содержимое в список в html файл
-        ulField.innerHTML = html;
-        console.log(html);
-      }
+      sendRequest("GET", requestURL);
     }
-    console.log(countriesArr);
-  });
+  }
+
+  function showCountry(countriesArr) {
+    // проверяем длину массива, если не пустой то преобразуем его в строку
+    const html = !countriesArr.length ? "" : countriesArr.join("");
+    // добавляем содержимое в список в html файл
+    ulField.innerHTML = html;
+  }
 }
+
 autocomplete();
+
+// function onChange(e) {
+//   console.log(e.target.value);
+// }
+
+// onChange = debounce(onChange, 500);
+
+// countryInput.addEventListener("input", onChange);
 
 //========================================================================================================================================================
 var countries = [
