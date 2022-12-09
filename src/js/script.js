@@ -93,7 +93,7 @@ function autocomplete() {
   ulField.addEventListener("click", (e) => {
     if (e.target) {
       countryInput.value = e.target.textContent;
-      ulField.classList.toggle("closeList");
+      ulField.classList.add("closeList");
       console.log(countryInput.value);
     }
   });
@@ -107,7 +107,9 @@ function autocomplete() {
       timeout = setTimeout(fnCall, ms);
     };
   };
-
+  document.addEventListener("click", (e) => {
+    ulField.classList.add("closeList");
+  });
   countryInput.addEventListener("input", debounce(onChange, 500));
   function onChange(e) {
     let countriesArr = [];
@@ -115,8 +117,6 @@ function autocomplete() {
     const requestURL = "https://jsonplaceholder.typicode.com/posts";
 
     if (e.target.value) {
-      ulField.classList.remove("closeList");
-
       console.log(e.target.value);
 
       function sendRequest(method, url, body = null) {
@@ -139,6 +139,9 @@ function autocomplete() {
           });
       }
       sendRequest("GET", requestURL);
+      ulField.classList.remove("closeList");
+    } else {
+      ulField.classList.add("closeList");
     }
   }
 
