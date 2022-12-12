@@ -101,15 +101,16 @@ function autocomplete() {
     let timeout;
     return function () {
       const fnCall = () => {
+        // fn.apply
         fn.apply(this, arguments);
       };
       clearTimeout(timeout);
       timeout = setTimeout(fnCall, ms);
     };
   };
-  document.addEventListener("click", (e) => {
-    ulField.classList.add("closeList");
-  });
+  // document.addEventListener("click", (e) => {
+  //   ulField.classList.add("closeList");
+  // });
   countryInput.addEventListener("input", debounce(onChange, 500));
   function onChange(e) {
     let countriesArr = [];
@@ -125,6 +126,7 @@ function autocomplete() {
             return response.json();
           })
           .then((data) => {
+            console.log(data);
             countriesArr = data.filter((item) =>
               item.title
                 .trim()
@@ -155,14 +157,6 @@ function autocomplete() {
 
 autocomplete();
 
-// function onChange(e) {
-//   console.log(e.target.value);
-// }
-
-// onChange = debounce(onChange, 500);
-
-// countryInput.addEventListener("input", onChange);
-
 //========================================================================================================================================================
 var countries = [
   "Afghanistan",
@@ -181,7 +175,29 @@ var countries = [
   "Bahamas",
 ];
 //========================================================================================================================================================
+// function hasSurvived(attackers, defenders) {
+//   let att = 0;
+//   let def = 0;
+//   for (let i = 0; i < attackers.length || i < defenders.length; i++)
+//     if (attackers[i] > defenders[i] || defenders[i] == undefined) {
+//       att++;
+//     } else if (attackers[i] < defenders[i] || attackers[i] == undefined) {
+//       def++;
+//     }
 
+//   console.log(att);
+//   console.log(def);
+//   if (att == def) {
+//     let sumAtt = attackers.reduce((a, c) => a + c, 0);
+//     let sumDef = defenders.reduce((a, c) => a + c, 0);
+//   }
+//   if (sumDef > sumAtt) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+// hasSurvived([1, 2, 3], [2, 3, 4]);
 //========================================================================================================================================================
 // XMLHttpRequest
 //========================================================================================================================================================
@@ -236,209 +252,4 @@ var countries = [
 //   name: "Alexander",
 //   age: 33,
 // };
-
-// function getAverage(marks){
-//   return Math.round(marks.reduce((a,b)=> a+b)/marks.length);
-
-// }
-// console.log(getAverage([1,2,3,4]));
-
-// function getCarMap(cars) {
-//   let counter = {};
-//   for (let elem of cars) {
-//     // console.log(counter[elem.id]);
-//     if (counter[elem.id] === undefined) {
-//       counter[elem.id] = 1;
-//     } else {
-//       counter[elem.id]++;
-//     }
-//   }
-
-//   return counter;
-// }
-
-// // INPUT:
-// const inputCar = [
-//   { id: "tesla", name: "Tesla" },
-//   { id: "tesla", name: "Tesla" },
-//   { id: "tesla", name: "Tesla" },
-//   { id: "audi", name: "Audi" },
-//   { id: "audi", name: "Audi" },
-//   { id: "mercedes", name: "Mercedes-Benz" },
-//   { id: "mercedes", name: "Mercedes-Benz" },
-//   { id: "mercedes", name: "Mercedes-Benz" },
-//   { id: "mercedes", name: "Mercedes-Benz" },
-// ];
-
-// console.log(getCarMap(inputCar));
-
-// for (let cars in inputCar) {
-//   console.log(inputCar[cars]?.id);
-// }
-// let resultOne = inputCar.filter(function (item) {
-//   return item.name == "Tesla";
-// });
-// console.log(resultOne);
-
-// for (let cars in inputCar) {
-//   output[inputCar[cars]?.id] = console.log(inputCar[cars]?.id);
-// }
-
-// output = {
-//   [cars]: i,
-// };
-// console.log(output);
-
-// OUTPUT:
-
-// {
-//   'tesla': 3,
-//   'audi': 2,
-//   'mercedes': 4,
-// }
-// let myObj = {
-//   name: "John",
-//   email: "sanekhouse54@gmai.com",
-//   country: "USA",
-// };
-// localStorage.setItem("myObj", myObj);
-// console.log(localStorage.getItem("myObj"));
-
-// let serializeObj = JSON.stringify(myObj);
-// localStorage.setItem("serializeObj", serializeObj);
-// console.log(localStorage.getItem("serializeObj"));
-// let value = JSON.parse(serializeObj);
-// console.log(value);
 //========================================================================================================================================================
-// let user = {
-//   name: "Василий Иванович",
-//   age: 35,
-// };
-// let serial = JSON.stringify(user);
-// console.log(serial);
-// let vaue = JSON.parse(serial);
-// console.log(vaue);
-//========================================================================================================================================================
-// let userInfo = {
-//   name: "vasya",
-//   age:30,
-//   "58":"znzk",
-// }
-// console.log(userInfo['name']);
-
-// function validateForm() {
-//   let x = document.forms["myForm"]["name"].value;
-//   let y = document.forms["myForm"]["email"].value;
-
-//   if ((x =="")||(y=="")){
-//     alert ("fill in all fields with *");
-//     form.classList.add('invalid');
-//     return false;
-//   }
-
-// }
-
-// function validateForm() {
-//   let form = document.getElementById('form');
-//   let x = document.forms["myForm"]["name"].value;
-//   let y = document.forms["myForm"]["email"].value;
-//   var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-//   if ((x =="")||(y=="")){
-//     alert ("fill in all fields with *");
-
-//     // return false;
-//   }
-//    if(y.match(pattern)) {
-//     y.classList.toggle(valid);
-
-//   }
-//   else{
-//     y.classList.toggle('invalid');
-//     x.classList.add('invalid');
-//   }
-
-// }
-// function validate(){
-//   var form = document.getElementById("form");
-//   var email = document.getElementById("email").value;
-//   var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
-
-// }
-
-// function validate(){
-
-//   if(email.match(pattern))
-//   {
-//       form.classList.add("valid");
-//       form.classList.remove("invalid");
-//   }
-//   else{
-//       form.classList.remove("valid");
-//       form.classList.add("invalid");
-//   }
-//   if (email == "") {
-//       form.classList.remove("valid");
-//       form.classList.remove("invalid");
-//   }
-// }
-
-// function checkData(){
-//   const email = document.getElementById('formEmail').value;
-//   const userName = document.getElementById('formName').value;
-
-//    const getName = localStorage.getItem(userName.value);
-//    const getEmail = localStorage.getItem(email.value);
-
-//    if(email==getEmail){
-//     if (userName== getName){
-//       alert("Login Successful!!!");
-//     }
-//     else{
-//       alert("Error name");
-//     }
-
-//    }
-//    else {
-//     alert("Total Error");
-//    }
-// }
-
-//========================================================================================================================================================
-
-// const formFields = document.querySelectorAll('[type="text"]');
-// const submitBtn = document.querySelector('[type="submit"]')
-// console.log(formFields);
-// console.log(submitBtn);
-
-// submitBtn.addEventListener('click',clearLocalStorage);
-
-// function clearLocalStorage() {
-//   localStorage.clear();
-// }
-//========================================================================================================================================================
-// function changeHandler(){
-//   console.log(this.name, this.value);
-//   localStorage.setItem(this.name, this.value);
-//   }
-//========================================================================================================================================================
-// function checkStorage() {
-//   for (let i = 0; i < formFields.length; i++) {
-//     formFields[i] = localStorage.getItem(formFields[i].name)
-//     console.log(formFields[i].name);
-//   }
-//   attachEvents();
-
-// }
-// function attachEvents(){
-//   for (let i = 0; i < formFields.length; i++) {
-//     formFields[i].addEventListener('change',changeHandler);
-//   }
-// }
-// checkStorage();
-// console.log(checkStorage());
-//========================================================================================================================================================
-//  let reduceValue= inputCar.reduce(function(previousValue, item, index, array){
-//   console.log(previousValue);
-//   return item.name==('Audi');
-// });
-// console.log(reduceValue);
